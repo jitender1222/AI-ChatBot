@@ -27,7 +27,7 @@ const Chat = () => {
 
   async function callServer(userText) {
     setLoading(true);
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}chat`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -44,7 +44,7 @@ const Chat = () => {
 
     const result = await response.json();
     setLoading(false);
-    return result.message.content; // assuming your backend sends { message: { content: "..." } }
+    return result.message.content;
   }
 
   return (
