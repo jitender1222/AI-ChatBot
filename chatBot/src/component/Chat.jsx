@@ -27,7 +27,7 @@ const Chat = () => {
 
   async function callServer(userText) {
     setLoading(true);
-    const response = await fetch("http://localhost:3000/chat", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
